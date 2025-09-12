@@ -3,9 +3,9 @@ import SideBar from "../components/SideBar";
 
 export default function MainLayout() {
   return (
-    <div className="flex ">
+    <div className="flex bg-slate-50 ">
       <SideBar />
-      <main className="p-4">
+      <main className="p-4 w-[100%]">
         {/* Render child routes */}
         <Outlet />
       </main>

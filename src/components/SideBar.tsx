@@ -12,7 +12,7 @@ const SideBar = () => {
           to="/translate"
           className="group hover:bg-neutral-600 rounded-md px-2 hover:text-neutral-50 flex gap-2 items-center"
         >
-          <Languages size={18} className="group-hover:text-blue-700" />
+          <Languages size={18} className="group-hover:text-blue-400" />
           <p>AI Translate</p>
         </Link>
         <Link
