@@ -1,32 +1,85 @@
 import { Languages } from "lucide-react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
   return (
     <nav className="bg-neutral-100 border-r-1 font-primary font-bold border-neutral-200 shadow min-w-44 flex flex-col h-screen">
       <div className="m-2 flex flex-col gap-2">
-        <Link to="/" className="my-2  ">
+        <NavLink to="/" className="my-2  ">
           AI Feast
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/translate"
-          className="group hover:bg-neutral-600 rounded-md px-2 hover:text-neutral-50 flex gap-2 items-center"
+          className={({ isActive }) =>
+            `group rounded-md px-2 flex gap-2 items-center ${
+              isActive
+                ? "bg-neutral-600 text-neutral-50"
+                : "hover:bg-neutral-600 hover:text-neutral-50"
+            }`
+          }
         >
-          <Languages size={18} className="group-hover:text-blue-400" />
-          <p>AI Translate</p>
-        </Link>
-        <Link
+          {({ isActive }) => (
+            <>
+              <Languages
+                size={18}
+                className={`${
+                  isActive
+                    ? "text-blue-400" // active state color
+                    : "group-hover:text-blue-400" // hover state color
+                }`}
+              />
+              <p>AI Translate</p>
+            </>
+          )}
+        </NavLink>
+        <NavLink
           to="/summary"
-          className="hover:bg-neutral-600 rounded-md px-2  hover:text-neutral-50"
+          className={({ isActive }) =>
+            `group rounded-md px-2 flex gap-2 items-center ${
+              isActive
+                ? "bg-neutral-600 text-neutral-50"
+                : "hover:bg-neutral-600 hover:text-neutral-50"
+            }`
+          }
         >
-          AI Summarize
-        </Link>
-        <Link
+          {({ isActive }) => (
+            <>
+              <Languages
+                size={18}
+                className={`${
+                  isActive
+                    ? "text-emerald-400" // active state color
+                    : "group-hover:text-emerald-400" // hover state color
+                }`}
+              />
+              <p>AI Summarize</p>
+            </>
+          )}
+        </NavLink>
+        <NavLink
           to="/question"
-          className="hover:bg-neutral-600 rounded-md px-2  hover:text-neutral-50"
+          className={({ isActive }) =>
+            `group rounded-md px-2 flex gap-2 items-center ${
+              isActive
+                ? "bg-neutral-600 text-neutral-50"
+                : "hover:bg-neutral-600 hover:text-neutral-50"
+            }`
+          }
         >
-          AI question
-        </Link>
+          {({ isActive }) => (
+            <>
+              <Languages
+                size={18}
+                className={`${
+                  isActive
+                    ? "text-blue-400" // active state color
+                    : "group-hover:text-blue-400" // hover state color
+                }`}
+              />
+              <p> AI question</p>
+            </>
+          )}
+        </NavLink>
       </div>
     </nav>
   );
