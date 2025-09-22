@@ -31,10 +31,10 @@ const AIQuickQuestion = () => {
       setLoading(true);
       const data = await generateAnswer(passage, question);
       setAnswer(data);
-      toast.success("Text summarized successfully!");
+      toast.success("Answer generated successfully!");
     } catch (error) {
-      console.error("Error during summarization:", error);
-      toast.error("An error occurred while summarizing the text.");
+      console.error("Error during answer generation:", error);
+      toast.error("An error occurred while genrating the answer.");
     } finally {
       setLoading(false);
     }
