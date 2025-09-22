@@ -56,19 +56,19 @@ const AISummary = () => {
       <div className="flex  gap-2 justify-between mt-6">
         <div className=" flex-1 min-h-96">
           <textarea
-            name="textToTranslate"
-            id="textToTranslate"
+            name="TextToSummarize"
+            id="TextToSummarize"
             value={content}
             onChange={(e) => setContent(e.target.value)}
             draggable="false"
-            placeholder="Enter/paste text here to translate"
+            placeholder="Enter/paste text here to Summarize"
             className="w-full  resize-none h-full p-2 rounded-md outline-1 outline-slate-200 bg-slate-100"
           ></textarea>
         </div>
         <div className="flex flex-col justify-center items-center gap-6 font-sans">
           <div className="flex flex-col">
             <label htmlFor="languagesFrom" className="">
-              Select Language
+              Summary Length
             </label>
             <select
               name="languagesFrom"
@@ -131,10 +131,10 @@ const AISummary = () => {
         </div>
         <div className="flex-1 min-h-96">
           <textarea
-            name="textToTranslate"
-            id="textToTranslate"
+            name="summarizedText"
+            id="summarizedText"
             draggable="false"
-            placeholder="Translated Text"
+            placeholder="summarized Text"
             value={summarized}
             className="w-full resize-none h-full p-2 rounded-md outline-1 outline-slate-200 bg-slate-100"
           ></textarea>
