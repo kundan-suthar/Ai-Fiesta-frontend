@@ -1,4 +1,4 @@
-import { Languages } from "lucide-react";
+import { BookOpenText, FileText, Languages } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
@@ -44,7 +44,7 @@ const SideBar = () => {
         >
           {({ isActive }) => (
             <>
-              <Languages
+              <FileText
                 size={18}
                 className={`${
                   isActive
@@ -68,12 +68,12 @@ const SideBar = () => {
         >
           {({ isActive }) => (
             <>
-              <Languages
+              <BookOpenText
                 size={18}
                 className={`${
                   isActive
-                    ? "text-blue-400" // active state color
-                    : "group-hover:text-blue-400" // hover state color
+                    ? "text-fuchsia-400" // active state color
+                    : "group-hover:text-fuchsia-400" // hover state color
                 }`}
               />
               <p> AI question</p>
