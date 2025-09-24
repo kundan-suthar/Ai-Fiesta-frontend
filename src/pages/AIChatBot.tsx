@@ -34,7 +34,7 @@ const AIChatBot = () => {
       <div className="text-primaryText h-[100dvh] p-3 ">
         <div className="flex h-full flex-col items-center justify-center  ">
           <h1 className="text-4xl font-bold">AI Chat Bot</h1>
-          <p className="leading-9">
+          <p className="leading-9 text-xl">
             A lightweight chatbot built with the{" "}
             <span className="font-semibold">LangChain</span> framework.
           </p>
