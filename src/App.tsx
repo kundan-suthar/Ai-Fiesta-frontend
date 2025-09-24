@@ -4,6 +4,7 @@ import AISummary from "./pages/AISummary";
 import AITranslate from "./pages/AITranslate";
 import AIQuickQuestion from "./pages/AIQuickQuestion";
 import Home from "./pages/Home";
+import AIChatBot from "./pages/AIChatBot";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/summary" element={<AISummary />} />
           <Route path="/translate" element={<AITranslate />} />
           <Route path="/question" element={<AIQuickQuestion />} />
+          <Route path="/chatBot" element={<AIChatBot />} />
         </Route>
       </Routes>
     </BrowserRouter>
