@@ -1,7 +1,20 @@
-@import "tailwindcss";
-
 @import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+
+@import "tailwindcss";
 
 @theme {
   --font-primary: "Kode Mono", monospace;
+  --color-bg: var(--main-bg);
+  --color-primaryText: var(--primaryText);
+}
+
+:root {
+  --main-bg: oklch(98.4% 0.003 247.858);
+  --primaryText: oklch(21.6% 0.006 56.043);
+  --inputBG: ;
+}
+
+.dark {
+  --main-bg: oklch(37.3% 0.034 259.733);
+  --primaryText: oklch(92.8% 0.006 264.531);
 }

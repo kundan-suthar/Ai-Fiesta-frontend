@@ -43,7 +43,7 @@ const AITranslate = () => {
     }
   };
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 ">
       {/* Sonner toaster for popups */}
       <Toaster position="top-right" richColors />
       <h1 className="mt-4 text-center w-[100%] text-2xl sm:text-5xl  font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-800 to-neutral-400">
@@ -55,7 +55,7 @@ const AITranslate = () => {
           META AI
         </span>
       </h2>
-      <div className="flex flex-col sm:flex-row gap-2 justify-between mt-6">
+      <div className="flex flex-1 flex-col sm:flex-row gap-2 justify-between mt-6">
         <div className=" flex-1 sm:min-h-96 ">
           <textarea
             name="textToTranslate"
@@ -64,11 +64,11 @@ const AITranslate = () => {
             onChange={(e) => setContent(e.target.value)}
             draggable="false"
             placeholder="Enter/paste text here to translate"
-            className="w-full  resize-none min-h-[200px] sm:h-full p-2 rounded-md outline-1 outline-slate-200 bg-slate-100"
+            className="w-full  resize-none min-h-[200px] sm:h-full p-2 rounded-md outline-1 outline-slate-200 bg-slate-100 "
           ></textarea>
         </div>
         <div className="flex sm:flex-col justify-center items-center gap-6 font-sans">
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col items-center gap-1">
             <label htmlFor="languagesFrom" className="">
               Language
             </label>
