@@ -40,7 +40,7 @@ const AIQuickQuestion = () => {
     }
   };
   return (
-    <div className="container mx-auto px-4 ">
+    <div className="container mx-auto px-4  min-h-svh overflow-y-hidden">
       {/* Sonner toaster for popups */}
       <Toaster position="top-right" richColors />
       <h1 className="mt-4 text-center w-[100%] text-2xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-800 to-neutral-400">
