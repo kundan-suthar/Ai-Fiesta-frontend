@@ -7,12 +7,38 @@ import {
   Sun,
   Waypoints,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) return savedTheme === "dark";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
+  useEffect(() => {
+    // Listen to system/browser theme change
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
+    const handleChange = (event: MediaQueryListEvent) => {
+      // event.matches → true means user switched to dark mode
+      setDarkMode(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    // Clean up listener when component unmounts
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
   return (
     <nav className="bg-bg border-r-1 text-primaryText font-bold  justify-between border-neutral-200 shadow w-14  sm:min-w-44 flex flex-col min-h-full fixed ">
       <div className="m-2 flex flex-col gap-2">
@@ -127,7 +153,13 @@ const SideBar = () => {
           className="flex items-center justify-between gap-2 w-fit hover:cursor-pointer"
           onClick={() => {
             setDarkMode(!darkMode);
-            document.documentElement.classList.toggle("dark");
+            if (darkMode) {
+              document.documentElement.classList.add("dark");
+              localStorage.setItem("theme", "dark");
+            } else {
+              document.documentElement.classList.remove("dark");
+              localStorage.setItem("theme", "light");
+            }
           }}
         >
           {darkMode ? <Sun className="" /> : <Moon className="" />}
